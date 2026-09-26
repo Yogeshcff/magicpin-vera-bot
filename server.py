@@ -6,6 +6,17 @@ from bot import compose
 
 app = FastAPI(title="Vera Merchant AI")
 START = time.time()
+
+
+@app.get("/")
+def root():
+    return {
+        "service": "Magicpin Vera Bot",
+        "status": "ok",
+        "message": "Vera API is running"
+    }
+
+
 STORE = {"category": {}, "merchant": {}, "customer": {}, "trigger": {}}
 VERSIONS = {}
 CONVS = {}
